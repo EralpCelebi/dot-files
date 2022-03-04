@@ -6,11 +6,12 @@ filetype off
 
 call plug#begin()
 
-Plug 'chriskempson/base16-vim'
-Plug 'neovimhaskell/haskell-vim'
 Plug 'junegunn/seoul256.vim'
+Plug 'chriskempson/base16-vim'
+Plug 'lifepillar/vim-gruvbox8'
+
 Plug 'jiangmiao/auto-pairs'
-Plug 'ycm-core/YouCompleteMe'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -40,7 +41,7 @@ set expandtab
 set noshiftround
 
 " Colorscheme
-colorscheme seoul256
+colorscheme gruvbox8_soft
 
 set background=dark
 
@@ -49,8 +50,3 @@ hi LineNr ctermbg=NONE guibg=NONE
 
 hi Pmenu  ctermbg=NONE guibg=NONE guifg=#ffffff
 hi SignColumn ctermbg=NONE guibg=NONE
-hi YcmErrorSign ctermbg=NONE guibg=NONE guifg=#c41d36
-hi YcmWarningSign ctermbg=NONE guibg=NONE guifg=#ebe015
-
-"You Complete Me
-set completeopt-=preview
