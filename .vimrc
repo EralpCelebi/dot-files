@@ -13,6 +13,12 @@ Plug 'lifepillar/vim-gruvbox8'
 Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Python Syntax
+Plug 'numirias/semshi'
+
+" C/C++ Syntax
+Plug 'bfrg/vim-cpp-modern'
+
 call plug#end()
 
 " Security
