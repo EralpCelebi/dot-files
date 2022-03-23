@@ -1,42 +1,43 @@
-" Don't try to be vi compatible
+" Written by Eralp Çelebi <eralp.celebi.personal@gmail.com>
+
+" Don't try to be vi compatible.
 set nocompatible
 
-" Helps force plugins to load correctly when it is turned back on below
+" Helps force plugins to load correctly when it is turned back on below.
 filetype off
+
+" Disable vim-polyglot as it messes with I3 configuration syntax.
+let g:polyglot_disabled = ['config', 'conf']
 
 call plug#begin()
 
 Plug 'junegunn/seoul256.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'lifepillar/vim-gruvbox8'
-
 Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" Python Syntax
-Plug 'numirias/semshi'
-
-" C/C++ Syntax
-Plug 'bfrg/vim-cpp-modern'
+Plug 'sheerun/vim-polyglot'
+Plug 'preservim/nerdtree'
+Plug 'OmniSharp/omnisharp-vim'
 
 call plug#end()
 
-" Security
+" Security.
 set modelines=0
 
-" Show line numbers
+" Show line numbers.
 set number
 
-" Keep the sign column on the screen
+" Keep the sign column on the screen.
 set signcolumn=yes
 
-" Enable colors
+" Enable colors.
 set termguicolors
 
-" Enable mouse
+" Enable mouse.
 set mouse=a
 
-" Whitespace
+" Whitespace.
 set wrap
 set textwidth=79
 set formatoptions=tcqrn1
@@ -46,7 +47,7 @@ set softtabstop=4
 set expandtab
 set noshiftround
 
-" Colorscheme
+" Colorscheme.
 colorscheme gruvbox8_soft
 
 set background=dark
