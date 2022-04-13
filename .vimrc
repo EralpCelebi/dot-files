@@ -1,59 +1,67 @@
 " Written by Eralp Çelebi <eralp.celebi.personal@gmail.com>
 
-" Don't try to be vi compatible.
+" Not living in the stone ages.
+set encoding=utf-8
+
+" Don't try to fit in.
 set nocompatible
 
-" Helps force plugins to load correctly when it is turned back on below.
-filetype off
+" Have a whole column to tell me I'm stupid.
+set signcolumn=yes
 
-" Disable vim-polyglot as it messes with I3 configuration syntax.
-let g:polyglot_disabled = ['config', 'conf']
+" Try to figure out what file we are working on.
+filetype on
 
+" Get some colors. Love 'em.
+syntax on
+
+" Legit no clue what this does.
+set hidden
+
+" Can't love 'em, need this.
+set termguicolors
+
+" Line numbers are kind of necessary dude.
+set number
+
+" I have a touchpad and a touchscreen, why would you not?
+set mouse=a
+
+" Don't follow, lead. (When you type it out feels g...)
+map <leader> p
+
+" Pluuuuug Yooooo.
 call plug#begin()
 
-Plug 'junegunn/seoul256.vim'
-Plug 'chriskempson/base16-vim'
-Plug 'lifepillar/vim-gruvbox8'
-Plug 'jiangmiao/auto-pairs'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
-Plug 'preservim/nerdtree'
-Plug 'OmniSharp/omnisharp-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'jackguo380/vim-lsp-cxx-highlight'
+
+Plug 'nanotech/jellybeans.vim'
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
-" Security.
-set modelines=0
+" Keybindings for my slender fingers.
 
-" Show line numbers.
-set number
+nnoremap <C-Up>                 :tabnew<CR>
+nnoremap <C-Down>               :q<CR>
+nnoremap <C-Left>       :tabprevious<CR>
+nnoremap <C-Right>      :tabnext<CR>
+nnoremap <S-Up>                 :split<CR>
+nnoremap <S-Right>      :vsplit<CR>
 
-" Keep the sign column on the screen.
-set signcolumn=yes
-
-" Enable colors.
-set termguicolors
-
-" Enable mouse.
-set mouse=a
-
-" Whitespace.
-set wrap
-set textwidth=79
-set formatoptions=tcqrn1
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-set noshiftround
-
-" Colorscheme.
-colorscheme gruvbox8_soft
-
+" Colors, again.
 set background=dark
+colorscheme base16-railscasts
 
-hi Normal ctermbg=NONE guibg=NONE
-hi LineNr ctermbg=NONE guibg=NONE
+hi Normal                               ctermbg=NONE guibg=NONE
+hi LineNr                               ctermbg=NONE guibg=NONE
+hi SignColumn   ctermbg=NONE guibg=NONE
 
-hi Pmenu  ctermbg=NONE guibg=NONE guifg=#ffffff
-hi SignColumn ctermbg=NONE guibg=NONE
+" C++ Spesific Bulls..t.
+hi LspCxxHlSymVariable                                          guifg=#8075d1
+"hi LspCxxHlGroupMemberVariable         guifg=#d45959
+hi LspCxxHlGroupMemberVariable          guifg=#8075d1
+hi LspCxxHlSymParameter                                         guifg=#8075d1
