@@ -15,7 +15,7 @@ gaps horizontal 6
 exec --no-startup-id setxkbmap -model pc104 -layout tr
 
 # Set the background image.
-exec --no-startup-id feh --bg-fill /home/eralp/files/images/background-pog.jpg
+exec --no-startup-id feh --bg-fill --no-fehbg /home/eralp/data/images/background.jpg
 
 # Configure borders.
 default_border none
@@ -109,20 +109,17 @@ bindsym $mod+q kill
 
 # Turn the compositor on and off.
 bindsym $mod+c exec --no-startup-id picom --experimental-backend
-bindsym $mod+Shift+c exec --no-startup-id killall picom 
-
-# Take a screenshot.
-bindsym $mod+Shift+s exec --no-startup-id scrot -s -e 'mv $f /tmp/'
+bindsym $mod+Shift+c exec --no-startup-id killall picom
 
 # Resize windows.
 
 mode "Resize" {
-	bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
-	
-	bindsym Return mode "default"
+
+        bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
